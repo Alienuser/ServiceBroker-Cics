@@ -1,0 +1,45 @@
+<md-dialog aria-label="Filter">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Add CICS Region</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout-padding>
+            Here you can add another cics region:<br>
+            <div layout="row">
+                <div>
+                    <md-input-container>
+                        <label>Tenant</label>
+                        <md-select ng-model="selectedTenant">
+                            <md-option ng-value="tenant" ng-repeat="tenant in tenants">{{tenant}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container>
+                        <label>Name</label>
+                        <input ng-model="name" type="text">
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container>
+                        <label>Description</label>
+                        <input ng-model="description" type="text">
+                    </md-input-container>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="close()">
+                Close
+            </md-button>
+            <md-button class="md-primary" ng-click="create()" md-autofocus>
+                Create
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

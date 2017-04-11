@@ -1,0 +1,12 @@
+<md-tabs md-dynamic-height md-border-bottom md-selected="0">
+    <md-tab label="Information">
+        <md-content class="md-padding">
+            <div ng-include="'/static/templates/info.html'" ng-controller="controllerInfo"></div>
+        </md-content>
+    </md-tab>
+    <md-tab label="CICS">
+        <md-content class="md-padding">
+            <div ng-include="'/static/templates/cics.html'" ng-controller="controllerCics"></div>
+        </md-content>
+    </md-tab>
+</md-tabs>

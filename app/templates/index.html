@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <title>ServiceBroker-zOSMF</title>
+
+    <!-- Include libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.css">
+
+    <!-- Include own stylesheet -->
+    <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body ng-app="bsb" layout="column" ng-cloak>
+
+<section layout="row" flex>
+
+    <md-content flex id="content">
+        <!-- Include the content -->
+        <div ng-view layout-padding></div>
+    </md-content>
+
+</section>
+
+<!-- Spinner -->
+<md-progress-circular id="spinner" ng-show="spinnerMode" md-mode="indeterminate"
+                      md-diameter="96"></md-progress-circular>
+
+<!-- Include Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-aria.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-messages.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.js"></script>
+
+<!-- Include own javascript -->
+<script type="text/javascript" src="/static/js/app.js"></script>
+
+<!-- Controller -->
+<script type="text/javascript" src="/static/js/controller/controllerMain.js"></script>
+<script type="text/javascript" src="/static/js/controller/controllerCics.js"></script>
+<script type="text/javascript" src="/static/js/controller/controllerInfo.js"></script>
+<script type="text/javascript" src="/static/js/controller/controllerInstance.js"></script>
+<script type="text/javascript" src="/static/js/controller/controllerDialogCics.js"></script>
+
+<!-- Factories -->
+<script type="text/javascript" src="/static/js/factory/factoryInstances.js"></script>
+<script type="text/javascript" src="/static/js/factory/factoryZOSMF.js"></script>
+
+</body>
+</html>

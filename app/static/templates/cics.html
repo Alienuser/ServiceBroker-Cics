@@ -1,0 +1,44 @@
+<div layout="row">
+    <div flex="90"><h2>List of all CICS</h2></div>
+    <div flex>
+        <md-button id="createCICS" class="md-raised md-primary" ng-click="addCics()">Add CICS</md-button>
+    </div>
+</div>
+
+<strong>Filter:</strong>
+<md-input-container>
+    <label>Tenant</label>
+    <md-select ng-model="selectedTenant">
+        <md-option>---</md-option>
+        <md-option ng-value="cics" ng-repeat="cics in cicse">{{cics['tenant-name']}}</md-option>
+    </md-select>
+</md-input-container>
+<md-input-container>
+    <label>Owner</label>
+    <md-select ng-model="selectedOwner">
+        <md-option>---</md-option>
+        <md-option ng-value="cics" ng-repeat="cics in cicse">{{cics.owner}}</md-option>
+    </md-select>
+</md-input-container>
+
+<md-list>
+    <md-list-item class="md-2-line"
+                  ng-repeat="cics in cicse | orderBy:'external-name' | filter: {'tenant-name' : selectedTenant['tenant-name'], 'owner' : selectedOwner.owner}"
+                  ng-click="open(cics['object-id'])">
+        <md-icon md-font-set="material-icons"> storage</md-icon>
+        <div class="md-list-item-text">
+            <h3> {{ cics['external-name'] }} </h3>
+            <p><strong>Owner:</strong> {{ cics.owner }}, <strong>Tenant:</strong> {{ cics['tenant-name'] }}</p>
+        </div>
+        <md-button class="md-secondary md-icon-button" ng-click="start(cics['object-id'], cics['external-name'])"
+                   aria-label="call">
+            <md-tooltip md-direction="bottom">Start</md-tooltip>
+            <md-icon md-font-set="material-icons"> play_arrow</md-icon>
+        </md-button>
+        <md-button class="md-secondary md-icon-button" ng-click="stop(cics['object-id'], cics['external-name'])"
+                   aria-label="call">
+            <md-tooltip md-direction="bottom">Stop</md-tooltip>
+            <md-icon md-font-set="material-icons"> stop</md-icon>
+        </md-button>
+    </md-list-item>
+</md-list>

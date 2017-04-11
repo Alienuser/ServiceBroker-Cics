@@ -1,0 +1,10 @@
+.clickable {
+    cursor: pointer;
+}
+
+#spinner {
+    position: fixed;
+    z-index: 99;
+    left: calc(50% - 46px);
+    top: calc(50% - 46px);
+}
