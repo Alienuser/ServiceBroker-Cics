@@ -1,13 +1,14 @@
 (function () {
 
-    app.controller('controllerInstance', function ($rootScope, $scope, $location, $mdToast, $routeParams, Instances) {
+    app.controller('controllerInstance', function ($rootScope, $scope, $location, $mdToast, $routeParams, Instances, api) {
+
+        $scope.api = api;
 
         // Get single instance
         Instances.getSingle($routeParams.objectId)
             .then(function (response) {
-                $scope.name = response.data['external-name'];
+                // Set the data
                 $scope.instance = response.data;
-                console.log(response.data);
 
                 // Disable spinner when page is loaded
                 $rootScope.spinnerMode = false;

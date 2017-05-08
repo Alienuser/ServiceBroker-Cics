@@ -1,6 +1,6 @@
 <h2>
     <md-icon md-font-set="material-icons" ng-click="goBack()" class="clickable"> arrow_back</md-icon>
-    Single instance ({{ name }})
+    Single instance ({{ instance['external-name'] }})
 </h2>
 
 <div layout="row">
@@ -12,6 +12,11 @@
                 </md-card-title-text>
             </md-card-title>
             <md-card-content layout="column" layout-align="layout-fill">
+                <div layout="row">
+                    <div flex="30"><strong>External Name</strong></div>
+                    <div flex>{{ instance['external-name'] }}</div>
+                </div>
+                <br>
                 <div layout="row">
                     <div flex="30"><strong>Object name</strong></div>
                     <div flex>{{ instance['object-name'] }}</div>
@@ -36,6 +41,11 @@
                     <div flex="30"><strong>Tenant</strong></div>
                     <div flex>{{ instance['tenant-name'] }}</div>
                 </div>
+                <br>
+                <div layout="row">
+                    <div flex="30"><strong>Port</strong></div>
+                    <div flex>{{ instance.variables[69].value }}</div>
+                </div>
             </md-card-content>
         </md-card>
     </div>
@@ -53,7 +63,7 @@
                         <md-icon md-font-set="material-icons"> build</md-icon>
                         <div class="md-list-item-text">
                             <h3> {{ action.name }} </h3>
-                            <p>-</p>
+                            <p>Start this task by clicking on play.</p>
                         </div>
                         <md-button class="md-secondary md-icon-button"
                                    ng-click="runJob(action.name)"
@@ -67,17 +77,3 @@
         </md-card>
     </div>
 </div>
-<!--<div layout="row">
-    <div flex>
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">xyz</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content layout="row" layout-align="space-between">
-                content...
-            </md-card-content>
-        </md-card>
-    </div>
-</div>-->

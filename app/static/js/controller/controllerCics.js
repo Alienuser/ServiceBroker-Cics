@@ -3,7 +3,7 @@
     app.controller('controllerCics', function ($rootScope, $scope, $mdToast, $mdDialog, $location, Instances) {
 
         $scope.tenants = ["Test_Frankfurt", "Test_Hamburg", "default"];
-        
+
         Instances.getAllCics()
             .then(function (response) {
                 $scope.cicse = response.data['scr-list'];
@@ -62,5 +62,4 @@
         };
 
     });
-
 })();
